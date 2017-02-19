@@ -21,7 +21,7 @@
      # $sql1="SELECT * FROM myusers WHERE username='$user'";
       $res=mysqli_query($conn, $sql1);
         if (mysqli_num_rows($res)>0) {
-          echo "<h4 align='center'>Αυτό το όνομα χρήστη χρησιμοποιείται ήδη.Παρακαλώ διαλέξτε κάποιο διαφορετικό!</h4>";
+          echo "<h4 align='center'>Αυτό το όνομα χρήστη χρησιμοποιείται ήδη! Παρακαλώ διαλέξτε κάποιο διαφορετικό!</h4>";
         }else {
          # $sql="INSERT INTO myusers (username,pass,email,name,surname,ADT,tel,address,bdate,gender) VALUES('$user','$pass','$mail','$fname','$lname','$am','$tel','$addr','$bd','$gen')";
           if (mysqli_query($conn, $sql)) {
@@ -29,7 +29,7 @@
           }
         }
     }else {
-      echo "<h4 align='center'>Οι κωδικοί δεν ταιριάζουν.Παρακαλώ βάλτε δο ίδιους κωδικούς.</h4>";
+      echo "<h4 align='center'>Οι κωδικοί δεν ταιριάζουν.Παρακαλώ βάλτε ίδιους κωδικούς.</h4>";
     }
   }
   mysqli_close($conn);
@@ -38,7 +38,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Καλως ήρθατε!</title>
+  <title>ΚΑΛΩΣ ΗΡΘΑΤΕ!</title>
   <link rel="shortcut icon" href="photos/unipi.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
@@ -83,14 +83,14 @@
           
           <div class="field-wrap">
             <label>
-              Κωδικός Πρόσβασης Ξανά<span class="req">*</span>
+              Επιβεβαίωση Κωδικού Πρόσβασης<span class="req">*</span>
             </label>
             <input type="password"required autocomplete="off"/>
           </div>
 
-          <div class="field-wrap">
-     			 <h2 style="color:white;font-weight:lighter;">Τμήματα</h2>     
-              <select>
+          <div class="field-wrap" align="center">
+     			 <h2 style="color:white;font-weight:lighter;">Επέλεξε τμήμα</h2>     
+              <select required>
                 <option name="tmhma" value="Οικονομικής Επιστήμης">Οικονομικής Επιστήμης</option>
                 <option value="Οργάνωσης & Διοίκησης Επιχειρήσεων">Οργάνωσης & Διοίκησης Επιχειρήσεων</option>
                 <option value="Διευθνών Ευρωπαϊκών Σπουδών">Διευθνών Ευρωπαϊκών Σπουδών</option>
@@ -101,8 +101,8 @@
                 <option value="Πληροφορικής">Πληροφορικής</option>
                 <option value="Ψηφιακών Συστημάτων">Ψηφιακών Συστημάτων</option>
               </select>
-          </div>	
-          
+          </div>
+          <div class="g-recaptcha" data-sitekey="6LcePAATAAAAAGPRWgx90814DTjgt5sXnNbV5WaW" align="center"></div>
           <button name="rsub" type="submit" class="button button-block"/>ΕΠΙΒΕΒΑΙΩΣΗ</button>
           </form>
         </div>
@@ -133,5 +133,6 @@
 </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="js/index.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js?hl=gr'></script>
 </body>
 </html>
